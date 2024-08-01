@@ -1,0 +1,23 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/freedesk_user_service
+    username: springstudent
+    password: springstudent
+  application:
+    name: authentication-service
+  main:
+    banner-mode: off
+
+app:
+  jwtSecret: S5arZ8qX8Anvk60LIHdGKZiGyLAyxW+LU1Xw2H4R6Uu1ndlUNPqhpVuKtFsfFvA+
+  jwtCryptoSecret: sBnlg0BGosgPMQju
+
+
+client:
+  feign:
+    token-service:
+      path: http://localhost:8079/token-service
+      generateToken: /token/generate
+      logoutUser: /token/logout
